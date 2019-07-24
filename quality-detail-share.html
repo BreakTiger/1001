@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一千零一夜</title>
+    <script src="js/flexible.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* 顶部 */
+        .top {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+        }
+
+        .left {
+            width: 2.55rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0.18rem 0;
+        }
+
+        .left .close-icon {
+            display: block;
+            width: 0.1rem;
+            height: 0.1rem;
+            background: url('images/close.png') no-repeat center/0.2rem;
+            margin-left: 0.25rem;
+            margin-right: 0.08rem;
+        }
+
+        .left>span {
+            font-size: 0.13rem;
+        }
+
+        .right {
+            width: 1.2rem;
+            background: #303030;
+            font-size: 0.13rem;
+            color: #ffffff;
+            text-align: center;
+            padding: 0.18rem 0;
+        }
+
+        /* banner */
+        .banner {
+            width: 3.75rem;
+            height: 2.32rem;
+            position: relative;
+        }
+
+        .banner>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cover {
+            width: 3.75rem;
+            height: 0.47rem;
+            background: url('images/cover.png') no-repeat center/3.75rem;
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            z-index: 10;
+        }
+
+        .content {
+            padding: 0.28rem 0.25rem 0.19rem 0.25rem;
+        }
+
+        .title {
+            font-size: 0.17rem;
+            color: #2B2A2A;
+            margin-bottom: 0.2rem;
+        }
+
+
+        .download {
+            width: 3.75rem;
+            font-size: 0.13rem;
+            color: #ffffff;
+            text-align: center;
+            padding-top: 0.19rem;
+            padding-bottom: 0.17rem;
+            background: #303030;
+            position: absolute;
+            bottom: 0rem;
+        }
+
+        .time-like-share {
+            font-size: 0.12rem;
+            color: #868686;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.36rem;
+        }
+
+        .like-share {
+            display: flex;
+            align-items: center;
+        }
+
+        .like {
+            display: flex;
+            align-items: center;
+            margin-right: 0.18rem;
+        }
+
+        .l-ifon {
+            display: block;
+            width: 0.15rem;
+            height: 0.13rem;
+            background: url('images/like.png') no-repeat center/ 0.15rem;
+            margin-right: 0.06rem;
+        }
+
+        .share {
+            display: flex;
+            align-items: center;
+        }
+
+        .s-icon {
+            display: block;
+            width: 0.14rem;
+            height: 0.14rem;
+            background: url('images/share.png') no-repeat center/0.14rem;
+            margin-right: 0.06rem;
+        }
+
+        .message {
+            width: 100%;
+            font-size: 0.13rem;
+            color: #494949;
+        }
+
+        .message img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <div class="top">
+            <div class="left">
+                <i class="close-icon"></i>
+                <span class="word">打开一千零一夜APP</span>
+            </div>
+            <div class="right">
+                立即下载
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="images/banner1.png">
+            <div class="cover"></div>
+        </div>
+
+        <div class="content">
+            <p class="title">
+                李佳琦推荐！纪念最火的化妆盒，还不快抢
+                就没啦！
+            </p>
+            <div class="time-like-share">
+                <span class="time">2019-04-19</span>
+                <div class="like-share">
+                    <div class="like">
+                        <i class="l-ifon"></i>
+                        <span>389</span>
+                    </div>
+
+                    <div class="share">
+                        <i class="s-icon"></i>
+                        <span>802</span>
+                    </div>
+                </div>
+            </div>
+            <div class="message">
+                <p>李佳琦是谁？刷抖音、逛淘宝的朋友们一定知道的，这个战胜马云成为全国买口红第一人的男人；所推口红一经推出，瞬间会遭到疯抢，随时断货！啧啧啧~谁能想到一个纯爷们竟然成了顶级口红带货狂魔。看完他的直播视频，瞬间想入手n多口红。
+                </p>
+                <p> omg！这是什么神仙颜色！这是魔鬼吧！</p>
+                <p>5姐觉得，你才是魔鬼，推荐的这些神仙颜色让人瞬间想买！没有理智</p>
+            </div>
+
+        </div>
+
+        <div class="download">
+            下载一千零一夜APP
+        </div>
+    </div>
+</body>
+<script src="js/jquery-3.4.0.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $(function () {
+
+        // 获取当前设备环境
+        let ua = navigator.userAgent.toLowerCase();
+        console.log('当前设备环境:', ua);
+        // 判断是否在微信浏览器中打开
+        // 1.微信浏览器中打开,微信不支持下载apk，必须跳转到外部的其他浏览器
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            let html = '<div class="row view-alert" style="z-index: 99; width: 100%; background: rgb(52, 52, 52); margin-left: 0px; margin-right: 0px; padding-top: 30px; padding-bottom: 30px; box-shadow: rgba(22, 22, 23, 0.62) 0px -10px 16px inset;"><div class="col-md-12 text-left" style="padding-right:50px;padding-left:30px;"><p style="color:#7f7e7e;margin:0px;">点击右上角按钮，然后在弹出的菜单中，点击在Safari中打开，即可安装</p></div><div class="col-md-12 pull-right" style="margin-right: 18px;"><img src="./images/alert-arrow.png" class="pull-right" style="width:30px;margin-top:-68px;"></div></div>';
+            $(html).insertBefore("#app");
+            setTimeout(function () {
+                $('.view-alert').slideDown(1000);
+            }, 200);
+        } else {
+            //2.不在微信浏览器中打开
+            // let isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; //android终端
+
+            let isAndroid = ua.search(/Android/i) > -1 || ua.search(/Adr/i) > -1
+            let isiOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            $('.right,.download').on('click', function () {
+                if (isAndroid) {
+                    window.location.href = "https://www.pgyer.com/CCbj"
+                }
+                if (isiOS) {
+                    alert("您的手机是iOS系统，无法安装Android应用");
+                }
+            })
+        };
+
+        // 关闭按钮：
+        $('.left .close-icon').on('click', function () {
+            $('.top').hide();
+        })
+
+
+    })
+</script>
+
+</html>
